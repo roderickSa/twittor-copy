@@ -19,7 +19,7 @@ func VerPerfil(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error al encontrar el registro "+err.Error(), 400)
 		return
 	}
-	w.Header().Set("Context-Type", "application/json")
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(perfil)
 }
