@@ -33,7 +33,7 @@ func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 			Email = claims.Email
 			IDUsuario = claims.ID.Hex()
 		}
-		return claims, true, IDUsuario, nil
+		return claims, encontrado, IDUsuario, nil
 	}
 	if !tkn.Valid {
 		return claims, false, "", errors.New("token invalido")
